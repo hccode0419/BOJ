@@ -1,12 +1,5 @@
-N = int(input())
-arr = []
+import sys
 
-for i in range(N):
-    values = input().split()
-    age = int(values[0])
-
-    arr.append([age, values[1]])
-
-sorted_dict = sorted(arr, key = lambda item: item[0])
-for i in range(N):
-    print(sorted_dict[i][0], sorted_dict[i][1])
+members = sys.stdin.readlines()[1:]
+members.sort(key = lambda x: int(x.split()[0]))
+print("".join(members))
