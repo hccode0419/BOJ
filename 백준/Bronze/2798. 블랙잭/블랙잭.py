@@ -1,12 +1,17 @@
-N, M = map(int, input().split())
-L = list(map(int, input().split()))
+n, m = map(int, input().split())
 
-sum_L = []
-for i in range(len(L)-2):
-    for j in range(i+1, len(L)-1):
-        for k in range(j+1, len(L)):
-            a = L[i] + L[j] + L[k]
-            if a < M+1:
-                sum_L.append(a)
-                
-print(max(sum_L))
+nums = list(map(int, input().split()))
+
+
+nums = sorted(nums)
+
+L = []
+for i in range(n):
+    for j in range(i+1 , n):
+        for k in range(j+1, n):
+            sum = nums[i] + nums[j] + nums[k]
+            if sum <= m:
+                L.append(sum)
+                     
+
+print(max(L))
